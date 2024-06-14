@@ -1,106 +1,152 @@
-# Image and Video Analysis-Azure Open AI in-a-box
-![banner](./readme-assets/banner-aoai-video-analysis-in-a-box.png)
-This solution examines videos and image of vehicles for damage using Azure Open AI GPT-4 Turbo with Vision and Azure AI Vision Image Analysis 4.0. All orchestration is done with Azure Data Factory, allowing this solution to be easily customized for your own use cases.
+# AI-in-a-Box - Image and Video Analysis with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory
 
-Please note that as of this 4/4/2024, Azure Open AI GPT-4 Turbo with Vision and Azure AI Vision Image Analysis 4.0 are in Public Preview for limited regions.
+<!-- <div style="display: flex;">
+  <div style="width: 70%;">
+    This solution is part of the the AI-in-a-Box framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions. Our goal is to simplify the adoption of AI technologies by providing ready-to-use accelerators that ensure quality, efficiency, and rapid deployment.
+  </div>
+  <div style="width: 30%;">
+    <img src="./media/ai-in-a-box.png" alt="AI-in-a-box Project Logo: Description" style="width: 10%">
+  </div>
+</div> -->
 
-- [Check here for available regions for Azure AI Vision Image Analysis 4.0.](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis?tabs=4-0#image-analysis-versions)
-- [Check here for available regions for GPT-4 Turbo with Vision.](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#gpt-4-and-gpt-4-turbo-preview-model-availability)
+|||
+|:---| ---:|
+|This solution is part of the the AI-in-a-Box framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions. Our goal is to simplify the adoption of AI technologies by providing ready-to-use accelerators that ensure quality, efficiency, and rapid deployment.| <img src="./media/ai-in-a-box.png" alt="AI-in-a-box Logo: Description" style="width: 70%"> |
 
-## Solution Architecture
+## User Story
 
-![solution-arch](./readme-assets/gpt4-adf-architecture.jpg)
+![gpt4v-user-story](./media/GPT4V-with-ADF-story.jpg)
+Azure Open AI GPT-4 Turbo with Vision (AOAI GPT-4V) allows you to analyze your own videos to gain insights from your images and videos without needing to develop and train your own model, which can be a time and cost consuming process. This opens up a multitude of test cases for different industries including:
 
-1. Land images and/or videos in Azure Blob storage with Azure Event Grid, Azure Logic Apps, Azure Functions, other ADF pipelines or other applications.
-1. The ADF pipeline retrieves the Azure AI API endpoints, keys and other configurations from Key Vault.
-1. The blob storage URL for the image or video file is retrieved.
-1. For videos, a video retrieval index is created for the file with Azure AI Vision and the video is ingested into the index. Depending on your use case, you could ingest multiple videos to the same index. Image analysis does not require an index.
-1. Call GPT4-V deployment in Azure Open AI, passing in video or image URL, the video retrieval index for videos, the system message, the user prompt and other inputs.
-1. Save the response to Azure Cosmos DB.
-1. If the video processes successfully, move the video to the appropriate archive folder.
+- Assessing videos or images provided for insurance claims
+- Identifying product defects in a manufacturing process
+Tracking store traffic, including items browsed, loss protection
+- Identifying animal movement in a forest or preserve without having to watch hours of videos
+  
+Yet, for those not versed in Python or .NET, tapping into Azure Open AI's potential can seem daunting. Azure Data Factory (ADF) steps in as a low-code solution to orchestrate Azure Open AI service calls and manage output ingestion. ADF has features that allow for easy configuration, customization, and parameterization of prompts and other AOAI inputs as well as data sources. These customization and parameterization features make pipelines reusable for ingesting different images and videos with different prompts and system messages.
 
-## Resources Deployed in this solution
+## What's in the Box
+![architecture](./media/gpt4-adf-architecture.jpg)
+- Sample images, videos, chat completion prompts to analyze images and videos of videos for damage
+- Low-code solution using ADF
+- Easy and secure integration with other Azure resources with Managed Identities
+- Parameterization making a single data factory reuseable for many different scenarios
+- Results stored in Azure Cosmos DB in Json Format
+- Deployment of all resources needed for Image and Video Analysis with GPT-4V and ADF. This includes:
+  - [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)
+  - [Azure Open AI With a GPT-4V (Preview) Deployment](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)
+    - [Check here for available models and regions](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#gpt-4-and-gpt-4-turbo-preview-model-availability)
+  - [Azure AI Vision with Image Analysis](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/how-to/video-retrieval#prerequisites)
+  - [Azure Blob Storage for ingesting and archiving the videos and images](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)
+  - [Azure Data Factory along with all Data Factory artifacts](https://learn.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory)
+    - Artifacts include all pipelines and activities needed to call GPT-4V vision to analyze your videos and images and store the results in Azure Cosmos DB
+  - [Azure Cosmos DB for storing chat comption results](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/quickstart-portal)
 
-![resources](./readme-assets/resources.jpg)
+For detailed information on this solution refer to:  
+    [Analytics Videos with Azure Open AI GPT-R Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778)  
+    [Analytics Videos with Azure Open AI GPT-R Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/image-analysis-with-azure-open-ai-gpt-4v-and-azure-data-factory/ba-p/4117969)
+  
+## Thinking Outside of the Box
 
-- User Assigned Managed Identity which has access to all resources
-- Storage account and containers for input images and videos and processed images videos. Additionally, a SAS key is created which is required at this time for Azure AI Vision Image Analysis 4.0.
-- Azure Key Vault for holding API keys, the storage SAS token, and deployment information.
-- Azure AI Vision with Image Analysis 4.0 for video ingestion and/or image analysis. Note that at this time Image Analysis 4.0 is in Preview and in limited regions. [Check here for available regions.](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis?tabs=4-0#image-analysis-versions)
-- Azure Open AI resource with a GPT-4 Vision Preview Deployment. [Check here for available regions.](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#gpt-4-and-gpt-4-turbo-preview-model-availability)
+The solution is extremely adaptable for your own use cases.
 
-## Prerequisites for running locally
+- Add your own videos and images to the storage account and change the system and user prompts for the chat completion.
+- The ADF orchestration pipeline processes all the files and images in a folder. This is perfect if you want to analyze images/videos on a batch basis. However, you may want to analyze a video or image as soon as it lands in the storage account. In that case, run the orchestration pipeline to test your system and user prompts in batch mode. Then add an event based trigger to analyze the video or image as soon as it lands in a storage account.
+- Build vector analytics over the Cosmos DB upon chat completion results
 
- 1. Install latest version of [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
- 1. Install latest version of [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/install)
- 1. Install latest version of [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows)
- 1. Install latest version [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-python#v2)
+## Deploy the Solution
+Install, deploy, upload sample videos and/or images
 
-## Deploy to Azure
+### Prerequisites for running locally:
+1. Install latest version of [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
+2. Install latest version of [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/install)
+3. Install latest version of [Azure Devloper CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
+4. Install latest version of [Azure Function Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-python#install-the-azure-functions-core-tools)
 
-### Clone this repository locally
+### Deploy to Azure
 
-```bash
-git clone https://github.com/Azure/AI-in-a-Box
-```
+1. Clone this repository locally
+    `git clone https://github.com/Azure/AI-in-a-Box`  
+2. Deploy resources
+  `cd gen-ai/a-services/gpt-video-analysis-in-a-box`  
+  `azd auth login`
+  `azd up`
 
-### Deploy resources
+You will be prompted for a subscription, a region for GPT-4V, a region for AI Vision, a resource group, a prefix and a suffix. The parameter called **location must be a region that supports GPT-4V** ; the parameter called **CVlocation must be a region that supports AI Vision Image Analysis 4.0**.
 
-```bash
-cd gen-ai/a-services/gpt-video-analysis-in-a-box
-azd auth login
-azd up
-```
+### Post deployment - upload videos and/or images
 
-You will be prompted for a subscription, a region for GPT-4V, a region for AI Vision, a resource group, a prefix and a suffix. The parameter called **location** must be a region that supports GPT-4V; the parameter called **CVlocation** must be a region that supports AI Vision Image Analysis 4.0.
+Upload images and videos of vehicles to your new storage account's **videosin** container using [Azure Storage Explorer](https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer), [AZ Copy](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-files#upload-the-contents-of-a-directory) or within the [Azure Portal](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#upload-a-block-blob). You can find some sample images and videos at the bottom of this blog, [Analyze Videos with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778).
 
-### Post deployment:
-Upload images and videos of vehicles to your new storage account's **videosin** container using [Azure Storage Explorer](https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer), [AzCopy](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-files#upload-the-contents-of-a-directory) or within [the Azure portal](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#upload-a-block-blob). You can find some sample images and videos at the bottom of this blog, [Analyze Videos with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778).
-
-## Run the solution
+### Run the Solution
 
 1. In the Azure portal, go to your newly created Azure Data Factory Resource and click launch:
-![launch](./readme-assets/launchadf.jpg)
+   ![launch](./media/launchadf.jpg)
+2. Select the **orchestratorGetandAnalyzeVideos** pipeline, click Debug, and examine your preset pipeline parameter values. Then click OK to run.
+   ![run](./media/run-from-adf.png)
+3. After it runs successfully, go to your Azure Cosmos DB resource and examine the results in Data Explorer:
+   ![review](./media/cosmos-data-explorer.png)
+4. At this time, GPT4-V does not support response_format={"type": "json_object"}. However, if we still specify the chat completion to return the results in Json, we can specify a Cosmos query to convert the string to a Json object:
+   ![query](./media/cosmos-query.png)
 
-1. Select the **orchestratorGetandAnalyzeVideos** pipeline, click **Debug**, and examine your preset pipeline parameter values. Then click OK to run.
-![run](./readme-assets/run-from-adf.png)
+Here's the Cosmos SQL code below:
 
-1. After it runs successfully, go to your Azure Cosmos DB resource and examine the results in Data Explorer:
-![cosmos](./readme-assets/cosmos-data-explorer.png)
+`SELECT gptoutput.filename, gptoutput.fileurl, gptoutput.shortdate,`  
+       `StringToObject(gptoutput.content) as results`  
+`FROM gptoutput`
 
-1. At this time, GPT4-V does not support response_format={"type": "json_object"}. However, if we still specify the chat completion to return the results in Json, we can specify a Cosmos query to convert the string to a Json object:
-![cosmos query](./readme-assets/cosmos-query.png)
+## Customize the Solution
 
-```sql
-SELECT gptoutput.filename, gptoutput.fileurl, gptoutput.shortdate, 
-StringToObject(gptoutput.content) as results
-FROM gptoutput 
-```
-
-## Enhance the solution in your environment for your own use cases
-
-This solution is highly customizable due to the parameterization capabilities in Azure Data Factory. Below are the features you can parameterize out-of-the-box, or should I say, out-of-the-AI-in-Box (insert-nerdy-laugh-here.)
+This solution is highly customizable due to the parameterization capabilities in Azure Data Factory. Below are the features you can parameterize out-of-the-box.
 
 ### Test prompts and other settings
 
-When developing your solution, you can rerun it with different settings to get the best results from GPT-4V by tweaking the **sys-message**, **user_prompt**, **temperature**, and **top_p** values.
-
-![parameters](./readme-assets/adf-parms.jpg)
+When developing your solution, you can rerun it with different settings to get the best results from GPT-4V by tweaking the sys-message, user_prompt, temperature, and top_p values. ![adf-parms](./media/adf-parms.jpg)
 
 ### Change from batch to real-time
 
-This solution is set to loop against a container of videos and images in batch, which is ideal for testing. However, when you move to production, you may want the video to be analyzed in real-time. To do this, you can set up a storage event trigger which will run when a file is landed in blob storage.
-![triMovegger](./readme-assets/blob-event-trigger.jpg)
-Move the If Activity inside the For Each loop to the main Orchestrator pipeline canvas and hen eliminate the Get Metadata and For Each activities.  Call the If activity after the variables are set and the parameters are retrieved from Key Vault. You can get the file name from the trigger metadata. [Read more about ADF Storage Event triggers here](https://learn.microsoft.com/en-us/azure/data-factory/how-to-create-event-trigger?tabs=data-factory).
+This solution is set to loop against a container of videos and images in batch, which is ideal for testing. However, when you move to production, you may want the video to be analyzed in real-time. To do this, you can set up a storage event trigger which will run when a file is landed in blob storage. ![real-time](./media/blob-event-trigger.jpg)
+
+Move the If Activity inside the For Each loop to the main Orchestrator pipeline canvas and hen eliminate the Get Metadata and For Each activities. Call the If activity after the variables are set and the parameters are retrieved from Key Vault. You can get the file name from the trigger metadata.
+
+Read more [here](https://learn.microsoft.com/en-us/azure/data-factory/how-to-create-event-trigger?tabs=data-factory) for more information on ADF Storage event triggers
 
 ### Use the same Data Factory for other image and/or video analysis use cases
 
-You can set up multiple triggers over your Azure Data Factory and pass different parameter values for whatever analysis you need to do:
-![triggers](./readme-assets/new-trigger-parm.png)
+You can set up multiple triggers over your Azure Data Factory and pass different parameter values for whatever analysis you need to do: ![new-trigger](./media/new-trigger-parm.png)
 
-You can set up different storage accounts for landing the files, then adjust the **storageaccounturl** and **storageaccountcontainer** parameters to ingest and analyze the images and/or videos. You can have different prompts and other values sent to GPT-4V in the **sys_message**, **user_prompt**, **temperature**, and **top_p** values for different triggers. You can land the data in a different Cosmos Account, Database and/or Container when setting the **cosmosaccount**, and **cosmosdb**, and **cosmoscontainer** values.
+- You can set up different storage accounts for landing the files, then adjust the storageaccounturl and storageaccountcontainer parameters to ingest and analyze the images and/or videos.
+- You can have different prompts and other values sent to GPT-4V in the sys_message, user_prompt, temperature, and top_p values for different triggers.
+- You can land the data in a different Cosmos Account, Database and/or Container when setting the cosmosaccount, and cosmosdb, and cosmoscontainer values.
 
 ### Only analyze images or videos
+
 If you are only analyzing images OR videos, you can delete the pipeline that is not needed (childAnalyzeImage or childAnalyzeVideo), eliminate the If activity inside the ForEach File activity and specify the Execute Pipeline activity for just the pipeline you need. However, it doesn't hurt to leave the unneeded pipeline there in case you want to use it in the future.
 
-For more details on this solution, check out this blog: [Analyze Videos with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778)!
+## How to Contribute
+
+This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>
+
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq) or contact <opencode@microsoft.com> with any additional questions or comments.
+## Key Contacts & Contributors
+
+Highlight the main contacts for the project and acknowledge contributors. You can adapt the structure from AI-in-a-Box:
+
+| Contact | GitHub ID | Email |
+|---------|-----------|-------|
+| Your Name | @YourGitHub | your.email@example.com |
+
+## Acknowledgments
+
+If applicable, offer thanks to individuals, organizations, or projects that helped inspire or support your project.
+
+## License
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general). Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
+
+
+---
+
+This project is part of the AI-in-a-Box series, aimed at providing the technical community with tools and accelerators to implement AI/ML solutions efficiently and effectively.
