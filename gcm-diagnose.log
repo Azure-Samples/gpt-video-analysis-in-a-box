@@ -1,0 +1,218 @@
+﻿Diagnose log at 2024-06-14T17:46:39Z
+
+AppPath: C:\Program Files\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Git\mingw64\bin\
+Version: 2.5.0+d34930736e131ad80e5690e5634ced1808aff3e2
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 22631)
+Reading environment variables... OK
+ Variables:
+HOMEPATH=\Users\jehayes
+DriverData=C:\Windows\System32\Drivers\DriverData
+COMPUTERNAME=JEHAYESMS
+UATDATA=C:\Windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77
+MSYSTEM=MINGW64
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+WINDIR=C:\Windows
+OneDrive=C:\Users\jehayes\OneDrive - Microsoft
+ProgramFiles(x86)=C:\Program Files (x86)
+TMP=C:\Users\jehayes\AppData\Local\Temp
+CONFIG_SITE=C:/Program Files/Git/etc/config.site
+PROCESSOR_REVISION=9a04
+TERM_PROGRAM=vscode
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+ORIGINAL_TEMP=C:/Users/jehayes/AppData/Local/Temp
+USERNAME=jehayes
+MINGW_PREFIX=C:/Program Files/Git/mingw64
+GIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core
+ACLOCAL_PATH=C:\Program Files\Git\mingw64\share\aclocal;C:\Program Files\Git\usr\share\aclocal
+TEMP=C:\Users\jehayes\AppData\Local\Temp
+LOCALAPPDATA=C:\Users\jehayes\AppData\Local
+MANPATH=C:\Program Files\Git\mingw64\local\man;C:\Program Files\Git\mingw64\share\man;C:\Program Files\Git\usr\local\man;C:\Program Files\Git\usr\share\man;C:\Program Files\Git\usr\man;C:\Program Files\Git\share\man
+EFC_7472=1
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 4, GenuineIntel
+MSYSTEM_CARCH=x86_64
+PROGRAMFILES=C:\Program Files (x86)
+ProgramData=C:\ProgramData
+USERDNSDOMAIN=northamerica.corp.microsoft.com
+TERM_PROGRAM_VERSION=1.90.0
+ORIGINAL_TMP=C:/Users/jehayes/AppData/Local/Temp
+SYSTEMROOT=C:\Windows
+POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Enterprise
+PROCESSOR_LEVEL=6
+NUMBER_OF_PROCESSORS=12
+SSH_ASKPASS=C:/Program Files/Git/mingw64/bin/git-askpass.exe
+SHLVL=1
+APPDATA=C:\Users\jehayes\AppData\Roaming
+SYSTEMDRIVE=C:
+VSCODE_GIT_ASKPASS_MAIN=c:\Users\jehayes\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\git\dist\askpass-main.js
+PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft Azure Information Protection\Powershell
+PUBLIC=C:\Users\Public
+VSCODE_GIT_IPC_HANDLE=\\.\pipe\vscode-git-13c613a4fd-sock
+HOSTNAME=jehayesms
+PKG_CONFIG_PATH=C:\Program Files\Git\mingw64\lib\pkgconfig;C:\Program Files\Git\mingw64\share\pkgconfig
+USERDOMAIN_ROAMINGPROFILE=NORTHAMERICA
+MSYSTEM_PREFIX=C:/Program Files/Git/mingw64
+CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_6496_LQIPKULKJCNKSZQI
+PLINK_PROTOCOL=ssh
+COLORTERM=truecolor
+MSYS=disable_pcon
+PATH=C:/Program Files/Git/mingw64/libexec/git-core;C:\Users\jehayes\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jehayes\bin;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet;C:\Program Files\PowerShell\7;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\Users\jehayes\AppData\Local\Microsoft\WindowsApps;C:\Users\jehayes\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\jehayes\.dotnet\tools;C:\Users\jehayes\AppData\Local\Programs\Azure Dev CLI;C:\Users\jehayes\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+MINGW_CHOST=x86_64-w64-mingw32
+GIT_TRACE2_PARENT_SID=610e08e5-5645-42c5-ab4c-5131d7516662
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+PKG_CONFIG_SYSTEM_LIBRARY_PATH=C:/Program Files/Git/mingw64/lib
+TMPDIR=C:\Users\jehayes\AppData\Local\Temp
+TERM=xterm-256color
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+SHELL=C:\Program Files\Git\usr\bin\bash.exe
+HOME=C:\Users\jehayes
+MSYSTEM_CHOST=x86_64-w64-mingw32
+COMSPEC=C:\Windows\system32\cmd.exe
+LOGONSERVER=\\JEHAYESMS
+USERPROFILE=C:\Users\jehayes
+DISPLAY=needs-to-be-defined
+COMMONPROGRAMFILES=C:\Program Files (x86)\Common Files
+VSCODE_GIT_ASKPASS_NODE=C:\Users\jehayes\AppData\Local\Programs\Microsoft VS Code\Code.exe
+_=C:/Program Files/Git/mingw64/bin/git
+USERDOMAIN=NORTHAMERICA
+CommonProgramW6432=C:\Program Files\Common Files
+HOMEDRIVE=C:
+INFOPATH=C:\Program Files\Git\mingw64\local\info;C:\Program Files\Git\mingw64\share\info;C:\Program Files\Git\usr\local\info;C:\Program Files\Git\usr\share\info;C:\Program Files\Git\usr\info;C:\Program Files\Git\share\info
+OneDriveConsumer=C:\Users\jehayes\OneDrive
+OneDriveCommercial=C:\Users\jehayes\OneDrive - Microsoft
+MINGW_PACKAGE_PREFIX=mingw-w64-x86_64
+SESSIONNAME=Console
+PWD=C:/Users/jehayes/OneDrive - Microsoft/Documents/GitHub/gpt-video-analysis-in-a-box
+EXEPATH=C:\Program Files\Git\bin
+LANG=en_US.UTF-8
+PROCESSOR_ARCHITEW6432=AMD64
+ORIGINAL_PATH=C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jehayes\bin;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet;C:\Program Files\PowerShell\7;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\Users\jehayes\AppData\Local\Microsoft\WindowsApps;C:\Users\jehayes\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\jehayes\.dotnet\tools;C:\Users\jehayes\AppData\Local\Programs\Azure Dev CLI;C:\Users\jehayes\AppData\Roaming\npm
+PROCESSOR_ARCHITECTURE=x86
+PS1=\[]633;A\]\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ \[]633;B\]
+OS=Windows_NT
+ProgramW6432=C:\Program Files
+PKG_CONFIG_SYSTEM_INCLUDE_PATH=C:/Program Files/Git/mingw64/include
+GIT_ASKPASS=c:\Users\jehayes\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\git\dist\askpass.sh
+ALLUSERSPROFILE=C:\ProgramData
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\jehayes\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\jehayes\AppData\Local\Temp\017f4c6b8c46009687a23c8a'... OK
+Reading from temporary file 'C:\Users\jehayes\AppData\Local\Temp\017f4c6b8c46009687a23c8a'... OK
+Deleting temporary file 'C:\Users\jehayes\AppData\Local\Temp\017f4c6b8c46009687a23c8a'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\jehayes
+UserDataDirectoryPath: C:\Users\jehayes\.gcm
+GetCurrentDirectory(): C:\Users\jehayes\OneDrive - Microsoft\Documents\GitHub\gpt-video-analysis-in-a-box
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:49377/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.45.2.windows.1'
+Locating current repository...Git repository at 'C:/Users/jehayes/OneDrive - Microsoft/Documents/GitHub/gpt-video-analysis-in-a-box/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=openssl
+file:C:/Program Files/Git/etc/gitconfig	http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/jehayes/.gitconfig	user.name=John Doe
+file:C:/Users/jehayes/.gitconfig	user.email=57195527+jehayesms@users.noreply.github.com
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/Azure-Samples/gpt-video-analysis-in-a-box.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	branch.jhbranch.github-pr-base-branch=Azure-Samples#gpt-video-analysis-in-a-box#main
+file:.git/config	branch.jhbranch.vscode-merge-base=origin/main
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\jehayes\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\jehayes\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+
