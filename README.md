@@ -142,7 +142,8 @@ Highlight the main contacts for the project and acknowledge contributors. You ca
 
 | Contact | GitHub ID | Email |
 |---------|-----------|-------|
-| Your Name | @YourGitHub | your.email@example.com |
+| Jean Hayes | @jehayesms |jean.hayes@microsoft.com |
+| Chris Ayers | @codebytes|chrisayers@microsoft.com |
 
 ## Acknowledgments
 
