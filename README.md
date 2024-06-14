@@ -43,8 +43,8 @@ Yet, for those not versed in Python or .NET, tapping into Azure Open AI's potent
   - [Azure Cosmos DB for storing chat comption results](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/quickstart-portal)
 
 For detailed information on this solution refer to:  
-    [Analytics Videos with Azure Open AI GPT-R Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778)  
-    [Analytics Videos with Azure Open AI GPT-R Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/image-analysis-with-azure-open-ai-gpt-4v-and-azure-data-factory/ba-p/4117969)
+    [Analytics Videos with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778)  
+    [Analytics Images with Azure Open AI GPT-R4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/image-analysis-with-azure-open-ai-gpt-4v-and-azure-data-factory/ba-p/4117969)
   
 ## Thinking Outside of the Box
 
@@ -53,11 +53,14 @@ The solution is extremely adaptable for your own use cases.
 - Add your own videos and images to the storage account and change the system and user prompts for the chat completion.
 - The ADF orchestration pipeline processes all the files and images in a folder. This is perfect if you want to analyze images/videos on a batch basis. However, you may want to analyze a video or image as soon as it lands in the storage account. In that case, run the orchestration pipeline to test your system and user prompts in batch mode. Then add an event based trigger to analyze the video or image as soon as it lands in a storage account.
 - Build vector analytics over the Cosmos DB upon chat completion results
+- For images, test compare results and performance of GPT-4V and GPT-4o by simply creating a GPT-4o deployment in the same Azure Open AI resource. Then, after deploying the solution, open the Linked Service called "GPT4VDeployment". Change the parameter value for parameter "gpt4deployment" to your GPT-4o deployment name.
 
 ## Deploy the Solution
+
 Install, deploy, upload sample videos and/or images
 
 ### Prerequisites for running locally:
+
 1. Install latest version of [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
 2. Install latest version of [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/install)
 3. Install latest version of [Azure Devloper CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
