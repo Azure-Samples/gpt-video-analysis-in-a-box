@@ -44,7 +44,7 @@ Yet, for those not versed in Python or .NET, tapping into Azure Open AI's potent
 
 For detailed information on this solution refer to:  
     [Analytics Videos with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778)  
-    [Analytics Images with Azure Open AI GPT-R4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/image-analysis-with-azure-open-ai-gpt-4v-and-azure-data-factory/ba-p/4117969)
+    [Analytics Images with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/image-analysis-with-azure-open-ai-gpt-4v-and-azure-data-factory/ba-p/4117969)
   
 ## Thinking Outside of the Box
 
@@ -53,7 +53,6 @@ The solution is extremely adaptable for your own use cases.
 - Add your own videos and images to the storage account and change the system and user prompts for the chat completion.
 - The ADF orchestration pipeline processes all the files and images in a folder. This is perfect if you want to analyze images/videos on a batch basis. However, you may want to analyze a video or image as soon as it lands in the storage account. In that case, run the orchestration pipeline to test your system and user prompts in batch mode. Then add an event based trigger to analyze the video or image as soon as it lands in a storage account.
 - Build vector analytics over the Cosmos DB upon chat completion results
-- For images, test compare results and performance of GPT-4V and GPT-4o by simply creating a GPT-4o deployment in the same Azure Open AI resource. Then, after deploying the solution, open the Linked Service called "GPT4VDeployment". Change the parameter value for parameter "gpt4deployment" to your GPT-4o deployment name.
 
 ## Deploy the Solution
 
@@ -125,6 +124,10 @@ You can set up multiple triggers over your Azure Data Factory and pass different
 ### Only analyze images or videos
 
 If you are only analyzing images OR videos, you can delete the pipeline that is not needed (childAnalyzeImage or childAnalyzeVideo), eliminate the If activity inside the ForEach File activity and specify the Execute Pipeline activity for just the pipeline you need. However, it doesn't hurt to leave the unneeded pipeline there in case you want to use it in the future.
+
+### Compare results of GPT-4V to GPT-4o for image processing
+
+If you are only analyzing images, you can compare results and performance of GPT-4V and GPT-4o. After deploying this accelerator, create a GPT-4o deployment in the Azure Open AI resource, naming it "gpt-4o". Then in ADF, open the Linked Service called "GPT4VDeployment". Change the parameter value for parameter "gpt4deployment" to your "gpt-4o". ![gpt-4o](./media/change-to-gpt4o.png)
 
 ## How to Contribute
 
