@@ -16,7 +16,7 @@
 ## User Story
 
 ![gpt4v-user-story](./media/GPT4V-with-ADF-story.jpg)
-Azure Open AI GPT-4 Turbo with Vision (AOAI GPT-4V) allows you to analyze your own videos to gain insights from your images and videos without needing to develop and train your own model, which can be a time and cost consuming process. This opens up a multitude of test cases for different industries including:
+Azure Open AI GPT-4 Turbo with Vision (AOAI GPT-4V) allows you to gain insights from your images and videos without needing to develop and train your own model, which can be a time and cost consuming process. This opens up a multitude of test cases for different industries including:
 
 - Assessing videos or images provided for insurance claims
 - Identifying product defects in a manufacturing process
