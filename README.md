@@ -68,10 +68,13 @@ Install, deploy, upload sample videos and/or images
 ### Deploy to Azure
 
 1. Clone this repository locally
+  
     `git clone https://github.com/Azure-Samples/gpt-video-analysis-in-a-box`  
 2. Deploy resources
-  `azd auth login`
-  `azd up`
+
+    `azd auth login`
+
+    `azd up`
 
 You will be prompted for a subscription, a region for GPT-4V, a region for AI Vision, a resource group, a prefix and a suffix. The parameter called **location must be a region that supports GPT-4V** ; the parameter called **CVlocation must be a region that supports AI Vision Image Analysis 4.0**.
 
