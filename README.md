@@ -68,9 +68,8 @@ Install, deploy, upload sample videos and/or images
 ### Deploy to Azure
 
 1. Clone this repository locally
-    `git clone https://github.com/Azure/AI-in-a-Box`  
+    `git clone https://github.com/Azure-Samples/gpt-video-analysis-in-a-box`  
 2. Deploy resources
-  `cd gen-ai/a-services/gpt-video-analysis-in-a-box`  
   `azd auth login`
   `azd up`
 
