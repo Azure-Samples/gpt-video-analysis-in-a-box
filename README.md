@@ -1,3 +1,23 @@
+---
+page_type: sample
+languages:
+- azdeveloper
+- powershell
+- bicep
+products:
+- azure
+- azure-key-vault
+- azure-blob-storage
+- azure-cosmos-db
+- azure-computer-vision
+- azure-openai
+- azure-data-factory
+urlFragment: gpt-video-analysis-in-a-box
+name: AI-in-a-Box - Image and Video Analysis with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory
+description: This solution is part of the the AI-in-a-Box framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions.
+---
+<!-- YAML front-matter schema: https://review.learn.microsoft.com/en-us/help/contribute/samples/process/onboarding?branch=main#supported-metadata-fields-for-readmemd -->
+
 # AI-in-a-Box - Image and Video Analysis with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory
 
 <!-- <div style="display: flex;">
