@@ -18,20 +18,11 @@ description: This solution is part of the the AI-in-a-Box framework developed by
 ---
 <!-- YAML front-matter schema: https://review.learn.microsoft.com/en-us/help/contribute/samples/process/onboarding?branch=main#supported-metadata-fields-for-readmemd -->
 
-# AI-in-a-Box - Image and Video Analysis with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory
+# GPT Video Analysis in-a-Box - Image and Video Analysis with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory
 
-<!-- <div style="display: flex;">
-  <div style="width: 70%;">
-    This solution is part of the the AI-in-a-Box framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions. Our goal is to simplify the adoption of AI technologies by providing ready-to-use accelerators that ensure quality, efficiency, and rapid deployment.
-  </div>
-  <div style="width: 30%;">
-    <img src="./media/ai-in-a-box.png" alt="AI-in-a-box Project Logo: Description" style="width: 10%">
-  </div>
-</div> -->
+This solution is part of the the [AI-in-a-Box](https://github.com/Azure/AI-in-a-Box) framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions. Our goal is to simplify the adoption of AI technologies by providing ready-to-use accelerators that ensure quality, efficiency, and rapid deployment. Read about and discover other AI-in-a-Box solutions at [https://github.com/Azure/AI-in-a-Box](https://github.com/Azure/AI-in-a-Box).
 
-|||
-|:---| ---:|
-|This solution is part of the the AI-in-a-Box framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions. Our goal is to simplify the adoption of AI technologies by providing ready-to-use accelerators that ensure quality, efficiency, and rapid deployment.| <img src="./media/ai-in-a-box.png" alt="AI-in-a-box Logo: Description" style="width: 70%"> |
+![AI-in-a-box Logo](./media/ai-in-a-box-logo.png)
 
 ## User Story
 
@@ -160,7 +151,7 @@ When you submit a pull request, a CLA bot will automatically determine whether y
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq) or contact <opencode@microsoft.com> with any additional questions or comments.
 ## Key Contacts & Contributors
 
-Highlight the main contacts for the project and acknowledge contributors. You can adapt the structure from AI-in-a-Box:
+Highlight the main contacts for the project and acknowledge contributors. You can adapt the structure from [AI-in-a-Box](https://github.com/Azure/AI-in-a-Box):
 
 | Contact | GitHub ID | Email |
 |---------|-----------|-------|
