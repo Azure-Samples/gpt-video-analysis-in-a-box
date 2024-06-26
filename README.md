@@ -13,12 +13,12 @@ products:
 - azure-openai
 - azure-data-factory
 urlFragment: gpt-video-analysis-in-a-box
-name: AI-in-a-Box - Image and Video Analysis with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory
+name: AI-in-a-Box - Image and Video Analysis with Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory
 description: This solution is part of the the AI-in-a-Box framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions.
 ---
 <!-- YAML front-matter schema: https://review.learn.microsoft.com/en-us/help/contribute/samples/process/onboarding?branch=main#supported-metadata-fields-for-readmemd -->
 
-# GPT Video Analysis in-a-Box - Image and Video Analysis with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory
+# GPT Video Analysis in-a-Box - Image and Video Analysis with Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory
 
 This solution is part of the the [AI-in-a-Box](https://github.com/Azure/AI-in-a-Box) framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions. Our goal is to simplify the adoption of AI technologies by providing ready-to-use accelerators that ensure quality, efficiency, and rapid deployment. Read about and discover other AI-in-a-Box solutions at [https://github.com/Azure/AI-in-a-Box](https://github.com/Azure/AI-in-a-Box).
 
@@ -27,14 +27,14 @@ This solution is part of the the [AI-in-a-Box](https://github.com/Azure/AI-in-a-
 ## User Story
 
 ![gpt4v-user-story](./media/GPT4V-with-ADF-story.jpg)
-Azure Open AI GPT-4 Turbo with Vision (AOAI GPT-4V) allows you to gain insights from your images and videos without needing to develop and train your own model, which can be a time and cost consuming process. This opens up a multitude of test cases for different industries including:
+Azure OpenAI GPT-4 Turbo with Vision (AOAI GPT-4V) allows you to gain insights from your images and videos without needing to develop and train your own model, which can be a time and cost consuming process. This opens up a multitude of test cases for different industries including:
 
 - Assessing videos or images provided for insurance claims
 - Identifying product defects in a manufacturing process
 Tracking store traffic, including items browsed, loss protection
 - Identifying animal movement in a forest or preserve without having to watch hours of videos
   
-Yet, for those not versed in Python or .NET, tapping into Azure Open AI's potential can seem daunting. Azure Data Factory (ADF) steps in as a low-code solution to orchestrate Azure Open AI service calls and manage output ingestion. ADF has features that allow for easy configuration, customization, and parameterization of prompts and other AOAI inputs as well as data sources. These customization and parameterization features make pipelines reusable for ingesting different images and videos with different prompts and system messages.
+Yet, for those not versed in Python or .NET, tapping into Azure OpenAI's potential can seem daunting. Azure Data Factory (ADF) steps in as a low-code solution to orchestrate Azure OpenAI service calls and manage output ingestion. ADF has features that allow for easy configuration, customization, and parameterization of prompts and other AOAI inputs as well as data sources. These customization and parameterization features make pipelines reusable for ingesting different images and videos with different prompts and system messages.
 
 ## What's in the Box
 ![architecture](./media/gpt4-adf-architecture.jpg)
@@ -45,7 +45,7 @@ Yet, for those not versed in Python or .NET, tapping into Azure Open AI's potent
 - Results stored in Azure Cosmos DB in Json Format
 - Deployment of all resources needed for Image and Video Analysis with GPT-4V and ADF. This includes:
   - [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)
-  - [Azure Open AI With a GPT-4V (Preview) Deployment](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)
+  - [Azure OpenAI With a GPT-4V (Preview) Deployment](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)
     - [Check here for available models and regions](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#gpt-4-and-gpt-4-turbo-preview-model-availability)
   - [Azure AI Vision with Image Analysis](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/how-to/video-retrieval#prerequisites)
   - [Azure Blob Storage for ingesting and archiving the videos and images](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)
@@ -54,8 +54,8 @@ Yet, for those not versed in Python or .NET, tapping into Azure Open AI's potent
   - [Azure Cosmos DB for storing chat comption results](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/quickstart-portal)
 
 For detailed information on this solution refer to:  
-    [Analytics Videos with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778)  
-    [Analytics Images with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/image-analysis-with-azure-open-ai-gpt-4v-and-azure-data-factory/ba-p/4117969)
+    [Analytics Videos with Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778)  
+    [Analytics Images with Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/image-analysis-with-azure-open-ai-gpt-4v-and-azure-data-factory/ba-p/4117969)
   
 ## Thinking Outside of the Box
 
@@ -91,7 +91,7 @@ You will be prompted for a subscription, a region for GPT-4V, a region for AI Vi
 
 ### Post deployment - upload videos and/or images
 
-Upload images and videos of vehicles to your new storage account's **videosin** container using [Azure Storage Explorer](https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer), [AZ Copy](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-files#upload-the-contents-of-a-directory) or within the [Azure Portal](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#upload-a-block-blob). You can find some sample images and videos at the bottom of this blog, [Analyze Videos with Azure Open AI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778).
+Upload images and videos of vehicles to your new storage account's **videosin** container using [Azure Storage Explorer](https://learn.microsoft.com/en-us/azure/vs-azure-tools-storage-manage-with-storage-explorer), [AZ Copy](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-files#upload-the-contents-of-a-directory) or within the [Azure Portal](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#upload-a-block-blob). You can find some sample images and videos at the bottom of this blog, [Analyze Videos with Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/analyze-videos-with-azure-open-ai-gpt-4-turbo-with-vision-and/ba-p/4032778).
 
 ### Run the Solution
 
@@ -140,7 +140,7 @@ If you are only analyzing images OR videos, you can delete the pipeline that is 
 
 ### Compare results of GPT-4V to GPT-4o for image processing
 
-If you are only analyzing images, you can compare results and performance of GPT-4V and GPT-4o. After deploying this accelerator, create a GPT-4o deployment in the Azure Open AI resource, naming it "gpt-4o". Then in ADF, open the Linked Service called "GPT4VDeployment". Change the parameter value for parameter "gpt4deployment" to your "gpt-4o". ![gpt-4o](./media/change-to-gpt4o.png)
+If you are only analyzing images, you can compare results and performance of GPT-4V and GPT-4o. After deploying this accelerator, create a GPT-4o deployment in the Azure OpenAI resource, naming it "gpt-4o". Then in ADF, open the Linked Service called "GPT4VDeployment". Change the parameter value for parameter "gpt4deployment" to your "gpt-4o". ![gpt-4o](./media/change-to-gpt4o.png)
 
 ## How to Contribute
 
