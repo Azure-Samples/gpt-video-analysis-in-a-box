@@ -13,12 +13,15 @@ products:
 - azure-openai
 - azure-data-factory
 urlFragment: gpt-video-analysis-in-a-box
-name: AI-in-a-Box - Image and Video Analysis with Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory
-description: This solution is part of the the AI-in-a-Box framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions.
+name: GPT Video Analysis in-a-box (AI-in-a-box) with Azure OpenAI and Azure Data Factory
+description: This examines videos and image of vehicles for damage using Azure Open AI and Azure AI Vision Image Analysis with orchestration via Azure Data Factory.
+
 ---
 <!-- YAML front-matter schema: https://review.learn.microsoft.com/en-us/help/contribute/samples/process/onboarding?branch=main#supported-metadata-fields-for-readmemd -->
 
 # GPT Video Analysis in-a-Box - Image and Video Analysis with Azure OpenAI GPT-4 Turbo with Vision and Azure Data Factory
+
+This solution examines videos and image of vehicles for damage using Azure Open AI GPT-4 Turbo with Vision and Azure AI Vision Image Analysis 4.0. All orchestration is done with Azure Data Factory, allowing this solution to be easily customized for your own use cases.
 
 This solution is part of the the [AI-in-a-Box](https://github.com/Azure/AI-in-a-Box) framework developed by the team of Microsoft Customer Engineers and Architects to accelerate the deployment of AI and ML solutions. Our goal is to simplify the adoption of AI technologies by providing ready-to-use accelerators that ensure quality, efficiency, and rapid deployment. Read about and discover other AI-in-a-Box solutions at [https://github.com/Azure/AI-in-a-Box](https://github.com/Azure/AI-in-a-Box).
 
