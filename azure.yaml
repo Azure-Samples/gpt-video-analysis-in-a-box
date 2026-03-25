@@ -2,7 +2,7 @@
 
 name: gpt4v-image-and-video-analysis-in-a-box
 metadata:
-    template: azd-init@1.4.4
+    template: gpt4v-video-analysis-in-a-box@1.4.4
 hooks:
   preprovision:
     windows:
